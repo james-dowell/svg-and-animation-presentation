@@ -121,6 +121,8 @@ export default class Presentation extends React.Component {
 
             <Text textSize="1.3em">&lt;feDistantLight&gt;</Text>
 
+            <Text textSize="1.3em">cxzcxczcxcz</Text>
+
           </Slide>
 
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
