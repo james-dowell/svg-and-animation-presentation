@@ -39,11 +39,88 @@ export default class Presentation extends React.Component {
             </Heading>
             <Text textSize="1.5em" margin="20px 0px 0px" bold>Let's get started</Text>
           </Slide>
+
           <Slide>
             <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
               What are SVG's?
             </Heading>
-            <Text textSize="1.2em" bold>SVG stands for Scalable Vector Graphics.  The SVG file format is based on the XML markup language. This means that even though the file contains an image, the file itself is actually stored in a text-based file format</Text>
+            <Text textSize="1.3em">SVG stands for Scalable Vector Graphics.  Although SVG is an image file format they are based on the XML markup language, the file itself is actually stored in a text-based format</Text>
+          </Slide>
+
+          <Slide bgColor="#7907FF">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+              Benefits of SVG's
+            </Heading>
+            <List>
+              <Appear><ListItem textColor="white">Scalability</ListItem></Appear>
+              <Appear><ListItem textColor="white">No need for multiple copies of images for retina displays</ListItem></Appear>
+              <Appear><ListItem textColor="white">Programmatically stylable</ListItem></Appear>
+              <Appear><ListItem textColor="white">File size</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Basic SVG elements
+            </Heading>
+          </Slide>
+
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Basic shape and graphic elements
+            </Heading>
+
+            <List>
+                <Appear><ListItem textColor="white">&lt;circle&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;ellipse&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;line&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;polygon&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;polyline&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;rect&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;image&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;line&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;path&gt;</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Text elements
+            </Heading>
+
+            <List>
+                <Appear><ListItem textColor="white">&lt;text&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;tspan&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;font&gt;</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Allowed HTML elements
+            </Heading>
+
+            <List>
+                <Appear><ListItem textColor="white">&lt;audio&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;canvas&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;iframe&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;video&gt;</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Complex "Fancy" SVG elements
+            </Heading>
+          </Slide>
+
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Lighting elements
+            </Heading>
+
+            <Text textSize="1.3em">&lt;feDistantLight&gt;</Text>
+
           </Slide>
 
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
