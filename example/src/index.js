@@ -19,7 +19,10 @@ const images = {
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
   logo: require("../assets/formidable-logo.svg"),
-  markdown: require("../assets/markdown.png")
+  markdown: require("../assets/markdown.png"),
+  lazers: require("../assets/lazers.gif"),
+  structural: require('../assets/structural.jpg'),
+  dryCat: require('../assets/dry-cat.gif')
 };
 
 preloader(images);
@@ -58,6 +61,10 @@ export default class Presentation extends React.Component {
               <Appear><ListItem textColor="white">File size</ListItem></Appear>
             </List>
           </Slide>
+
+        <Slide bgColor="#1E0240">
+            <Image src={images.dryCat.replace("/", "")} margin="0px auto 40px" height="293px"/>
+        </Slide>
 
           <Slide bgColor="#1E0240">
             <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
@@ -115,15 +122,46 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="#1E0240">
+              <Image src={images.lazers.replace("/", "")} margin="0px auto 40px" height="293px"/>
+          </Slide>
+
+          <Slide bgColor="#1E0240">
             <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
                 Lighting elements
             </Heading>
 
-            <Text textSize="1.3em">&lt;feDistantLight&gt;</Text>
+            <List>
+                <Appear><ListItem textColor="white">&lt;feDistantLight&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;fePointLight&gt;</ListItem></Appear>
+                <Appear><ListItem textColor="white">&lt;feSpotLight&gt;</ListItem></Appear>
+            </List>
 
-            <Text textSize="1.3em">cxzcxczcxcz</Text>
+            <Appear><Link textColor="white" href="https://codepen.io/anon/pen/MJYXdq"  margin="20px 0px 0px" target="_blank">Lighting codepen</Link></Appear>
+          </Slide>
+
+          <Slide transition={["slide"]} bgImage={images.structural.replace("/", "")} bgDarken={0.75}>
+              <Heading size={1} caps fit textColor="white">
+                Structural elements
+              </Heading>
+
+              <List>
+                  <Appear><ListItem textColor="white">&lt;feDistantLight&gt;</ListItem></Appear>
+                  <Appear><ListItem textColor="white">&lt;fePointLight&gt;</ListItem></Appear>
+                  <Appear><ListItem textColor="white">&lt;feSpotLight&gt;</ListItem></Appear>
+              </List>
 
           </Slide>
+
+
+
+
+
+
+
+
+
+
+
 
           <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
             <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
