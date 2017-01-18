@@ -145,9 +145,26 @@ export default class Presentation extends React.Component {
               </Heading>
 
               <List>
-                  <Appear><ListItem textColor="white">&lt;feDistantLight&gt;</ListItem></Appear>
-                  <Appear><ListItem textColor="white">&lt;fePointLight&gt;</ListItem></Appear>
-                  <Appear><ListItem textColor="white">&lt;feSpotLight&gt;</ListItem></Appear>
+                  <Appear><ListItem textColor="white">&lt;defs&gt;</ListItem></Appear>
+                  <Appear><ListItem textColor="white">&lt;g&gt;</ListItem></Appear>
+                  <Appear><ListItem textColor="white">&lt;svg&gt;</ListItem></Appear>
+                  <Appear><ListItem textColor="white">&lt;symbol&gt;</ListItem></Appear>
+                  <Appear><ListItem textColor="white">&lt;use&gt;</ListItem></Appear>
+              </List>
+
+          </Slide>
+
+          <Slide>
+
+              <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                  Your tasks for today
+              </Heading>
+
+              <List>
+                  <Appear><ListItem textColor="white">Simple shapes and animation - <Link textColor="white" href="http://codepen.io/james-dowell/full/BppWdy"  margin="20px 0px 0px" target="_blank">codepen - 20 mins</Link></ListItem></Appear>
+                  <Appear><ListItem textColor="white">Simple SVG loading animation - <Link textColor="white" href="http://codepen.io/james-dowell/full/appZvd/"  margin="20px 0px 0px" target="_blank">codepen - 20 mins</Link></ListItem></Appear>
+                  <Appear><ListItem textColor="white">SVG animation - <Link textColor="white" href="http://snapsvg.io/assets/demos/illustrated-infographic-coffee/"  margin="20px 0px 0px" target="_blank">codepen - 20 mins</Link></ListItem></Appear>
+                  <Appear><ListItem textColor="white">Complex SVG animation - <Link textColor="white" href="http://codepen.io/james-dowell/full/appZvd/"  margin="20px 0px 0px" target="_blank">codepen</Link></ListItem></Appear>
               </List>
 
           </Slide>
