@@ -22,7 +22,9 @@ const images = {
   markdown: require("../assets/markdown.png"),
   lazers: require("../assets/lazers.gif"),
   structural: require('../assets/structural.jpg'),
-  dryCat: require('../assets/dry-cat.gif')
+  dryCat: require('../assets/dry-cat.gif'),
+  viewBox: require('../assets/viewbox-400-300-crop.jpg'),
+  preserveAspectRatio: require('../assets/viewbox-200-300-meet-vs-slice.jpg')
 };
 
 preloader(images);
@@ -62,8 +64,64 @@ export default class Presentation extends React.Component {
             </List>
           </Slide>
 
+          <Slide bgColor="#7907FF">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+              Libraries
+            </Heading>
+            <List>
+              <Appear><ListItem textColor="white">SnapSVG</ListItem></Appear>
+              <Appear><ListItem textColor="white">D3</ListItem></Appear>
+              <Appear><ListItem textColor="white">SVG.js</ListItem></Appear>
+              <Appear><ListItem textColor="white">Raphael.JS</ListItem></Appear>
+              <Appear><ListItem textColor="white">Vivus for path animations</ListItem></Appear>
+              <Appear><ListItem textColor="white">.. Or you could use even use react?</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide bgColor="#7907FF">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+              Things to watch out for!
+            </Heading>
+            <List>
+              <Appear><ListItem textColor="white">Inline attributes will always take precident over CSS styles</ListItem></Appear>
+              <Appear><ListItem textColor="white">Case matters (in some instances uppercase/lowercase is important)</ListItem></Appear>
+              <Appear><ListItem textColor="white">The blackbox.. I mean viewbox!</ListItem></Appear>
+            </List>
+          </Slide>
+
+          <Slide bgColor="#7907FF">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                What is the viewbox?
+            </Heading>
+
+            <Appear><Text textSize="1.3em" textColor="white">The viewbox is a coordinate system!</Text></Appear>
+
+            <Appear><CodePane
+              lang="html"
+              source={require("raw-loader!../assets/viewbox-example-1.example")}
+              margin="20px auto"
+            /></Appear>
+
+            <Appear><Image src={images.viewBox.replace("/", "")} margin="0px auto 0px" height="350px"/></Appear>
+          </Slide>
+
+          <Slide bgColor="#7907FF">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Preserving aspect ratio
+            </Heading>
+
+            <Appear><Text textSize="1.2em" textColor="white">You can preserve the aspect ratio using the preserveAspectRatio attribute</Text></Appear>
+
+            <Appear><Text textSize="1.2em" textColor="white">Accepted values: Meet, Align or Slice - all of which have a number of aditional options</Text></Appear>
+
+            <Appear><Image src={images.preserveAspectRatio.replace("/", "")} margin="20px auto 0px" height="330px"/></Appear>
+
+          </Slide>
+
         <Slide bgColor="#1E0240">
             <Image src={images.dryCat.replace("/", "")} margin="0px auto 40px" height="293px"/>
+
+            <Text textSize="1.3em" textColor="white">Anyone finding this a bit dry?</Text>
         </Slide>
 
           <Slide bgColor="#1E0240">
@@ -154,172 +212,62 @@ export default class Presentation extends React.Component {
 
           </Slide>
 
-          <Slide>
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Lets focus on the &lt;path&gt;
+            </Heading>
 
+            <Appear><Text textSize="1.1em" textColor="white">More specifically lets talk about the 'd' attribute (where you can use every letter of the Aphabet)</Text></Appear>
+
+            <List margin="0px 0px 20px">
+                <Appear><ListItem textSize=".9em" textColor="white">M = moveto</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">L = lineto</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">H = horizontal lineto</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">V = vertical lineto</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">C = curveto</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">S = smooth curveto</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">Q = quadratic Bézier curve</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">T = smooth quadratic Bézier curveto</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">A = elliptical Arc</ListItem></Appear>
+                <Appear><ListItem textSize=".9em" textColor="white">Z = closepath</ListItem></Appear>
+            </List>
+
+            <Appear><Text textSize="1em" textColor="white">Remember I said case matters..</Text></Appear>
+
+
+          </Slide>
+
+          <Slide bgColor="#1E0240">
+            <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                Animation - Enter some magic CSS
+            </Heading>
+
+            <Appear><Text textSize="1.1em" textColor="white">Chris Coyer demonstrates it best! <Link textColor="#9552e6" href="http://codepen.io/chriscoyier/pen/NRwANp"  margin="20px 0px 0px" target="_blank">codepen</Link></Text></Appear>
+
+          </Slide>
+
+          <Slide>
               <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
                   Your tasks for today
               </Heading>
 
               <List>
-                  <Appear><ListItem textColor="white">Simple shapes and animation - <Link textColor="white" href="http://codepen.io/james-dowell/full/BppWdy"  margin="20px 0px 0px" target="_blank">codepen - 20 mins</Link></ListItem></Appear>
-                  <Appear><ListItem textColor="white">Simple SVG loading animation - <Link textColor="white" href="http://codepen.io/james-dowell/full/appZvd/"  margin="20px 0px 0px" target="_blank">codepen - 20 mins</Link></ListItem></Appear>
-                  <Appear><ListItem textColor="white">SVG animation - <Link textColor="white" href="http://snapsvg.io/assets/demos/illustrated-infographic-coffee/"  margin="20px 0px 0px" target="_blank">codepen - 20 mins</Link></ListItem></Appear>
-                  <Appear><ListItem textColor="white">Complex SVG animation - <Link textColor="white" href="http://codepen.io/james-dowell/full/appZvd/"  margin="20px 0px 0px" target="_blank">codepen</Link></ListItem></Appear>
+                  <Appear><ListItem textColor="white">Simple shapes and animation - <Link textColor="#063544" href="http://codepen.io/james-dowell/full/BppWdy"  margin="20px 0px 0px" target="_blank">codepen</Link> - 30 mins</ListItem></Appear>
+                  <Appear><ListItem textColor="white">Simple SVG loading animation - <Link textColor="#063544" href="http://codepen.io/james-dowell/full/appZvd/"  margin="20px 0px 0px" target="_blank">codepen</Link> - 40 mins</ListItem></Appear>
+                  <Appear><ListItem textColor="white">SVG animation - <Link textColor="#063544" href="http://snapsvg.io/assets/demos/illustrated-infographic-coffee/"  margin="20px 0px 0px" target="_blank">codepen</Link> - 20 mins</ListItem></Appear>
+                  <Appear><ListItem textColor="white">Jokes!</ListItem></Appear>
+                  <Appear><ListItem textColor="white">Have a go at your own animation (Prizes for imagination)</ListItem></Appear>
               </List>
 
           </Slide>
 
-
-
-
-
-
-
-
-
-
-
-
-          <Slide transition={["slide"]} bgColor="black" notes="You can even put notes on your slide. How awesome is that?">
-            <Image src={images.kat.replace("/", "")} margin="0px auto 40px" height="293px"/>
-            <Heading size={2} caps fit textColor="primary" textFont="primary">
-              Wait what?
-            </Heading>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary" notes="<ul><li>talk about that</li><li>and that</li></ul>">
-            <CodePane
-              lang="jsx"
-              source={require("raw-loader!../assets/deck.example")}
-              margin="20px auto"
-            />
-          </Slide>
-          <Slide transition={["slide"]} bgImage={images.city.replace("/", "")} bgDarken={0.75}>
-            <Appear fid="1">
-              <Heading size={1} caps fit textColor="primary">
-                Full Width
+          <Slide>
+              <Heading size={1} fit caps lineHeight={1} margin="0px 0px 30px">
+                  Crack on!
               </Heading>
-            </Appear>
-            <Appear fid="2">
-              <Heading size={1} caps fit textColor="tertiary">
-                Adjustable Darkness
-              </Heading>
-            </Appear>
-            <Appear fid="3">
-              <Heading size={1} caps fit textColor="primary">
-                Background Imagery
-              </Heading>
-            </Appear>
-          </Slide>
-          <Slide transition={["zoom", "fade"]} bgColor="primary">
-            <Heading caps fit>Flexible Layouts</Heading>
-            <Layout>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
-              </Fill>
-            </Layout>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="black">
-            <BlockQuote>
-              <Quote>Wonderfully formatted quotes</Quote>
-              <Cite>Ken Wheeler</Cite>
-            </BlockQuote>
-          </Slide>
-          <Slide transition={["spin", "zoom"]} bgColor="tertiary">
-            <Heading caps fit size={1} textColor="primary">
-              Inline Markdown
-            </Heading>
-            <Markdown>
-              {`
-![Markdown Logo](${images.markdown.replace("/", "")})
 
-You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-* Lists too!
-* With ~~strikethrough~~ and _italic_
-* And let's not forget **bold**
-              `}
-            </Markdown>
           </Slide>
-          <Slide transition={["slide", "spin"]} bgColor="primary">
-            <Heading caps fit size={1} textColor="tertiary">
-              Smooth
-            </Heading>
-            <Heading caps fit size={1} textColor="secondary">
-              Combinable Transitions
-            </Heading>
-          </Slide>
-          <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="primary">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-          <Slide transition={["slide"]} bgColor="primary"
-            notes="Hard to find cities without any pizza"
-          >
-            <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-              Pizza Toppings
-            </Heading>
-            <Layout>
-              <Table>
-                <thead>
-                  <TableRow>
-                    <TableHeaderItem/>
-                    <TableHeaderItem>2011</TableHeaderItem>
-                    <TableHeaderItem>2013</TableHeaderItem>
-                    <TableHeaderItem>2015</TableHeaderItem>
-                  </TableRow>
-                </thead>
-                <tbody>
-                  <TableRow>
-                    <TableItem>None</TableItem>
-                    <TableItem>61.8%</TableItem>
-                    <TableItem>39.6%</TableItem>
-                    <TableItem>35.0%</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem>Pineapple</TableItem>
-                    <TableItem>28.3%</TableItem>
-                    <TableItem>54.5%</TableItem>
-                    <TableItem>61.5%</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem>Pepperoni</TableItem>
-                    <TableItem/>
-                    <TableItem>50.2%</TableItem>
-                    <TableItem>77.2%</TableItem>
-                  </TableRow>
-                  <TableRow>
-                    <TableItem>Olives</TableItem>
-                    <TableItem/>
-                    <TableItem>24.9%</TableItem>
-                    <TableItem>55.9%</TableItem>
-                  </TableRow>
-                </tbody>
-              </Table>
-            </Layout>
-          </Slide>
-          <Slide transition={["spin", "slide"]} bgColor="tertiary">
-            <Heading size={1} caps fit lineHeight={1.5} textColor="primary">
-              Made with love in Seattle by
-            </Heading>
-            <Link href="http://www.formidable.com"><Image width="100%" src={images.logo}/></Link>
-          </Slide>
+
         </Deck>
       </Spectacle>
     );
