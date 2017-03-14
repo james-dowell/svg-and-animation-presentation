@@ -38,6 +38,11 @@ module.exports = {
     }, {
       test: /\.svg$/,
       loader: "url-loader?limit=10000&mimetype=image/svg+xml"
-    }]
+    }, {
+      test: /\.gif$/,
+      loader: "url-loader?mimetype=image/gif",
+      include: path.join(__dirname, "example/assets")
+    }
+  ]
   }
 };
